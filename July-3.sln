@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinoTheWalker", "SinoTheWalker\SinoTheWalker.csproj", "{D30FBAAE-5089-4440-9DBD-D693310EFB08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftUniKaraoke", "SoftUniKaraoke\SoftUniKaraoke.csproj", "{A05B2721-E8C1-4B16-9718-C67EA018D01D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnduranceRally", "EnduranceRally\EnduranceRally.csproj", "{7E802152-824D-45B4-BAB3-56920855B6D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D30FBAAE-5089-4440-9DBD-D693310EFB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D30FBAAE-5089-4440-9DBD-D693310EFB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D30FBAAE-5089-4440-9DBD-D693310EFB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D30FBAAE-5089-4440-9DBD-D693310EFB08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A05B2721-E8C1-4B16-9718-C67EA018D01D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05B2721-E8C1-4B16-9718-C67EA018D01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05B2721-E8C1-4B16-9718-C67EA018D01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05B2721-E8C1-4B16-9718-C67EA018D01D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E802152-824D-45B4-BAB3-56920855B6D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E802152-824D-45B4-BAB3-56920855B6D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E802152-824D-45B4-BAB3-56920855B6D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E802152-824D-45B4-BAB3-56920855B6D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

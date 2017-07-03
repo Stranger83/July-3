@@ -33,6 +33,7 @@ namespace SoftUniKaraoke
 						peopleAwards[participant] = new List<string>();
 					}
 					peopleAwards[participant].Add(award);
+					peopleAwards[participant] = peopleAwards[participant].Distinct().ToList();
 				}
 				input = Console.ReadLine();
 			}
@@ -43,13 +44,14 @@ namespace SoftUniKaraoke
 				return;
 			}
 
-			var resultDict = peopleAwards.OrderByDescending(x => x.Value.Count).ThenBy(x => x.Key)
+			var resultDict = peopleAwards
+				.OrderByDescending(x => x.Value.Count).ThenBy(x => x.Key)
 				.ToDictionary(x => x.Key, x => x.Value);
 
 			foreach (var kvp in resultDict)
 			{
 				var participant = kvp.Key;
-				var awards = kvp.Value.Distinct().ToList();
+				var awards = kvp.Value;
 				Console.WriteLine($"{participant}: {awards.Count} awards");
 				foreach (var aw in awards.OrderBy(x => x))
 				{

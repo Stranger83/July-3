@@ -11,29 +11,39 @@ namespace WinningTicket
 	{
 		static void Main(string[] args)
 		{
-			var allTickets = Regex.Split(Console.ReadLine(), @"\s*,\s*");
+			var allTickets = Console.ReadLine()
+				.Split(',')
+				.Select(a => a.Trim())
+				.ToArray();
 
-			var patternForValidTicket = @"\S{20}";
 			for (int i = 0; i < allTickets.Length; i++)
 			{
-				var match = Regex.Match(allTickets[i], patternForValidTicket);
-				if (match.Success)
+				var ticket = allTickets[i].Trim();
+
+				if (ticket.Length == 20)
 				{
-					var jackpot = Regex.Match(match.Value, @"(\$|\^|@|#)\1{19}");
-					if (jackpot.Success)
+					var leftSide = ticket.Substring(0, 10);
+					var rightSide = ticket.Substring(10);
+					var winPattern = @"(#{6,10}|@{6,10}|\${6,10}|\^{6,10})";
+
+					var winLeft = Regex.Match(leftSide, winPattern);
+					var winRight = Regex.Match(rightSide, winPattern);
+					if (winLeft.Success && winRight.Success
+						&& winLeft.Value[0] == winRight.Value[0])
 					{
-						Console.WriteLine($"ticket \"{match.Value}\" - 10{match.Value[0]} Jackpot!");
-					} else if (!jackpot.Success)
-					{
-						var win = Regex.Match(match.Value, @"(\${6,}|\^{6,}|#{6,}|@{6,}).+(\1)");
-						if (win.Success)
+						var count = Math.Min(winLeft.Length, winRight.Length);
+						if (count == 10)
 						{
-							Console.WriteLine($"ticket \"{match.Value}\" - {win.Groups[1].Length}{win.Groups[1].Value[0]}");
+							Console.WriteLine($"ticket \"{ticket}\" - 10{winLeft.Value[0]} Jackpot!");
 						}
 						else
 						{
-							Console.WriteLine($"ticket \"{match.Value}\" - no match");
+							Console.WriteLine($"ticket \"{ticket}\" - {count}{winLeft.Value[0]}");
 						}
+					}
+					else
+					{
+						Console.WriteLine($"ticket \"{ticket}\" - no match");
 					}
 				}
 				else
